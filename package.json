@@ -1,0 +1,30 @@
+{
+  "name": "taskapi",
+  "version": "1.0.0",
+  "description": "NodeJs task api tech test",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start:dev": "NODE_ENV=dev nodemon src/index.js",
+    "start:prod": "NODE_ENV=prod node src/index.js"
+  },
+  "keywords": [
+    "NodeJs",
+    "Express",
+    "MySql"
+  ],
+  "author": "Oswaldo Félix Sánchez",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "ip": "^2.0.1",
+    "mysql": "^2.18.1",
+    "pino": "^9.6.0",
+    "pino-pretty": "^13.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.9"
+  }
+}
