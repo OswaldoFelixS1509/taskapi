@@ -4,7 +4,7 @@ const HttpStatus = {
     ACCEPTED: { code: 202, status: 'Accepted'},
     NO_CONTENT: { code: 204, status: 'No content'},
     BAD_REQUEST: { code: 400, status: 'Bad request'},
-    NOT_FOUND: { code: 404, status: 'Not found'},
+    NOT_FOUND: { code: 404, status: 'Not Found' },
     INTERNAL_SERVER_ERROR: { code: 500, status: 'Internal server error'},
 };
 
