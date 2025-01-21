@@ -5,7 +5,7 @@ import cors from 'cors';
 import Response from './domain/response.js';
 import logger from './util/logger.js'
 import HttpStatus from './util/HttpStatus.js';
-import taskRoutes from './routes/task.route.js';
+import taskRoutes from './routes/api/task.route.js';
 
 dotenv.config();
 
