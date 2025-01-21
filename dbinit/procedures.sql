@@ -5,6 +5,13 @@ BEGIN
     SELECT * FROM tasks;
 END $$
 
+CREATE PROCEDURE sp_get_task(
+    IN p_id INT
+)
+BEGIN
+    SELECT * FROM tasks WHERE id = p_id;
+END $$
+
 CREATE PROCEDURE sp_create_task(
     IN p_name VARCHAR(255),
     IN p_description TEXT,
@@ -12,9 +19,10 @@ CREATE PROCEDURE sp_create_task(
     IN p_status ENUM('pending', 'in_progress', 'completed')
 )
 BEGIN
-    INSERT INTO tasks (name, description, due_date, status)
-    VALUES (p_name, p_description, p_due_date, p_status);
+    INSERT INTO tasks (name, description, due_date, status, created_at)
+    VALUES (p_name, p_description, p_due_date, p_status, NOW());
 END $$
+
 
 CREATE PROCEDURE sp_update_task(
     IN p_id INT,
@@ -38,6 +46,6 @@ CREATE PROCEDURE sp_delete_task(
 BEGIN
     DELETE FROM tasks
     WHERE id = p_id;
-END $$
+END $$;
 
 DELIMITER ;
