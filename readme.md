@@ -5,6 +5,12 @@
 
 ## API Reference
 
+### Swagger documentation
+
+- You can check and try the API routes via /api-docs
+
+### Routes 
+
 #### Get all tasks
 
 ```http
@@ -58,3 +64,6 @@
 | Parameter | Type     | Description                       |
 | :-------- | :------- | :-------------------------------- |
 | `id`      | `string` | **Required**. Id of task to delete |
+
+
+
