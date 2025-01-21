@@ -31,7 +31,7 @@ class Task {
                 return callback(new Error('Error occurred while creating task.'));
             }
 
-            callback(null, results.insertId);
+            callback(null, results);
         });
     }
 

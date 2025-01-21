@@ -15,8 +15,23 @@ services:
       MYSQL_USER: admin
       MYSQL_PASSWORD: 123
       MYSQL_ROOT_PASSWORD: 123
-      SERVICE:TAGS: dev
-      SERVICE_NAME: mysqldb
+    networks:
+      - internalnet
+
+  task_management: 
+    build: .
+    container_name: task_management_container
+    volumes: 
+      - nodeapp:/usr/code
+    ports:
+      - 3000:3000
+    environment:
+      DB_HOST: mysqldb
+      DB_USER: admin
+      DB_PASSWORD: 123
+      DB_NAME: task_management
+    depends_on: 
+      - mysqldb
     networks:
       - internalnet
     
@@ -26,3 +41,4 @@ networks:
 
 volumes:
   mysql_data:
+  nodeapp:

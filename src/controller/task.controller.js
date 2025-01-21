@@ -54,14 +54,14 @@ export const createTask = (req, res) => {
             .send(new Response(HttpStatus.BAD_REQUEST.code, HttpStatus.BAD_REQUEST.status, 'Missing required fields.'));
     }
 
-    Task.createTask(name, description, due_date, status, (error, taskId) => {
+    Task.createTask(name, description, due_date, status, (error, results) => {
         if (error) {
             logger.error(error.message);
             return res.status(HttpStatus.INTERNAL_SERVER_ERROR.code)
                 .send(new Response(HttpStatus.INTERNAL_SERVER_ERROR.code, HttpStatus.INTERNAL_SERVER_ERROR.status, error.message));
         }
 
-        const task = { id: taskId, name, description, due_date, status, created_at: new Date() };
+        const task = results[0][0];
         res.status(HttpStatus.CREATED.code)
             .send(new Response(HttpStatus.CREATED.code, HttpStatus.CREATED.status, 'Task created.', { task }));
     });

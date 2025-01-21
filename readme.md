@@ -1,3 +1,7 @@
+# Setup
+
+- Copy .env.example and create .env file
+- Run docker compose up -d in order to create the container
 
 ## API Reference
 

@@ -21,6 +21,10 @@ CREATE PROCEDURE sp_create_task(
 BEGIN
     INSERT INTO tasks (name, description, due_date, status, created_at)
     VALUES (p_name, p_description, p_due_date, p_status, NOW());
+
+    SET @TASK_ID = LAST_INSERT_ID();
+
+    SELECT * FROM tasks WHERE id = @TASK_ID;
 END $$
 
 
